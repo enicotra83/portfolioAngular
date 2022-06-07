@@ -1,0 +1,42 @@
+<section class="educacion">
+    <h3>Educación y Certificaciones</h3>
+    <div *ngFor="let educacion of educacion; let i=index" class="accordion accordion-flush" id="accordion{{i}}">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flushHeading{{i}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#flushCollapse' + i" aria-expanded="false"
+                    [attr.aria-controls]="'flushCollapse' + i">
+                    {{educacion.title}}
+                </button>
+            </h2>
+            <div id="flushCollapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'flushHeading' + i"
+                [attr.data-parent]="'#accordion' + i">
+                <div class="accordion-body">
+                    {{educacion.description}}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        [attr.data-bs-target]="'#modal' + i">
+                        Certificado
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal{{i}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img [src]="educacion.certificadoImg" alt="Certificado de {{educacion.title}}">
+                                    <img src="" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="proyectos" id="proyectos">
+    <h3>Mis Proyectos</h3>
+    <div *ngFor="let proyecto of proyectos" class="divSubclases">
+        <div class="subclases">
+            <img class="proyImg" [src]="proyecto.icon" alt="logo {{proyecto.title}}">
+            <p class="proySubclases">{{proyecto.title}}</p>
+        </div>
+        <div class="card-group">
+            <div *ngFor="let detalle of proyecto.proyectos" class="card bg-light" style="width: 18rem;">
+                <img [src]="detalle.projectImg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{detalle.title}}</h5>
+                    <p class="card-text">{{detalle.description}}</p>
+                    <div class="botones">
+                        <a href="#" class="btn btn-secondary btnProy"><img src="./assets/www.png" class="imgBtnProyecto"
+                                alt="logo web"></a>
+                        <a href="#" class="btn btn-secondary btnProy"><img src="./assets/github.png"
+                                class="imgBtnProyecto" alt="logo github"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
