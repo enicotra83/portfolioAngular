@@ -13,9 +13,9 @@ export class HeroService {
   constructor(private http: HttpClient) {}
 
   public getUser(): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
+    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/1`);
   }
   public updateUser(usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>(`${this.apiServerUrl}/usuario/actualizar`, usuario);
+    return this.http.put<Usuario>(`${this.apiServerUrl}/usuario`, usuario);
   }
 }

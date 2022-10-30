@@ -18,7 +18,7 @@
           [attr.data-bs-target]="'#flushCollapse' + i" aria-expanded="false" [attr.aria-controls]="'flushCollapse' + i">
 
           <!-- Boton Editar -->
-          <button type="button" class="admin" [attr.data-bs-target]="'#editEducacionModal' + i" data-bs-toggle="modal">
+          <button type="button" class="admin" [attr.data-bs-target]="'#editEducacionModal' + i" data-bs-toggle="modal" (click)="agregarAEdit(educacion)">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen"
               viewBox="0 0 16 16">
               <path
@@ -33,11 +33,9 @@
               <path
                 d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
             </svg></button>
-          <p class="tituloEdu">{{educacion.tituloEdu}} {{educacion.idEdu}}</p>
+          <p class="tituloEdu">{{educacion.tituloEdu}}</p>
         </button>
-
       </h2>
-
     </div>
 
     <div id="flushCollapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'flushHeading' + i"
@@ -68,31 +66,32 @@
     </div>
 
     <!-- Modal Editar -->
-    <div class="modal fade" id="editEducacionModal{{i}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="editEducacionModal{{i}}" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel'+i"
       aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fs-5" id="editEducacionModalLabel">Editar {{ educacion.tituloEdu }}</h5>
+            <h5 class="modal-title fs-5" id="editEducacionModalLabel{{i}}">Editar {{ editEducacion?.tituloEdu }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form #editForm="ngForm">
               <div class="mb-3">
                 <label for="tituloEdu" class="col-form-label">Titulo:</label>
-                <input type="text" class="form-control" id="tituloEdu" ngModel="{{ educacion?.tituloEdu }}"
+                <input type="text" class="form-control" id="tituloEdu1" ngModel="{{ editEducacion?.tituloEdu }}"
                   name="tituloEdu" placeholder="Agregue el Titulo del Curso" required>
               </div>
-              <input type="hidden" ngModel="{{ educacion?.idEdu }}" name="idEdu" class="form-control" id="idEdu"
+              <input type="hidden" ngModel="{{ editEducacion?.idEdu }}" name="idEdu" class="form-control" id="idEdu"
                 placeholder="" />
               <div class="mb-3">
                 <label for="descripcionEdu" class="col-form-label">Descripcion:</label>
-                <input type="text" class="form-control" id="descripcionEdu1" ngModel="{{ educacion?.descripcionEdu }}"
-                  name="descripcionEdu" placeholder="Agregue la descripcion del Curso" required>
+                <input type="text" class="form-control" id="descripcionEdu1"
+                  ngModel="{{ editEducacion?.descripcionEdu }}" name="descripcionEdu"
+                  placeholder="Agregue la descripcion del Curso" required>
               </div>
               <div class="mb-3">
                 <label for="certificadoEdu" class="col-form-label">Certificado:</label>
-                <input type="text" class="form-control" id="certificadoEdu" ngModel="{{ educacion?.certificadoEdu }}"
+                <input type="text" class="form-control" id="certificadoEdu1" ngModel="{{ editEducacion?.certificadoEdu }}"
                   name="certificadoEdu" placeholder="Agregue el Certificado del Curso" required>
               </div>
             </form>
@@ -119,7 +118,7 @@
           <div class="modal-body">
             <p>
               Estás seguro que quieres borrar
-              {{ educacion.tituloEdu }} {{educacion.idEdu}}?
+              {{ educacion.tituloEdu }}?
             </p>
           </div>
           <div class="modal-footer">

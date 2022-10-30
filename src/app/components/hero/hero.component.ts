@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { NgForm } from '@angular/forms';
 import { HeroService } from 'src/app/servicios/hero.service';
 //import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
@@ -23,6 +24,23 @@ export class HeroComponent implements OnInit {
     this.heroService.getUser().subscribe({
       next: (response: Usuario) => {
         this.usuario = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+
+  public agregarAEdit(usuario: Usuario): void {
+    console.log(usuario);
+    this.editUsuario = usuario;
+  }
+
+  public onEditUsuario(usuario: Usuario): void {
+    this.heroService.updateUser(usuario).subscribe({
+      next: (response: Usuario) => {
+        console.log(response);
+        this.getUser();
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

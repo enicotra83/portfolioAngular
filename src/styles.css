@@ -30,6 +30,8 @@ section {
 .admin {
   display: flex;
   justify-content: flex-end;
+  border: none;
+  background: inherit;
 }
 .headerSeccion {
   display: flex;

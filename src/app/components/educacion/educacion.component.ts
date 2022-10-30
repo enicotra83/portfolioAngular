@@ -13,6 +13,7 @@ export class EducacionComponent implements OnInit {
   public educaciones: Educacion[] = [];
   public educations2 = this.educacionService.getEducacion();
   public editEducacion: Educacion | undefined;
+  public agregadaEducacion: Educacion | undefined;
   public deleteEducacion: Educacion | undefined;
 
   constructor(private educacionService: EducacionService) {}
@@ -33,8 +34,8 @@ export class EducacionComponent implements OnInit {
   }
 
   public onAddEducacion(educacion: Educacion) {
-    this.editEducacion = educacion;
-    this.educacionService.updateEducacion(educacion).subscribe({
+    this.agregadaEducacion = educacion;
+    this.educacionService.addEducacion(educacion).subscribe({
       next: (response: Educacion) => {
         console.log(response);
         this.getEducacion();
@@ -46,7 +47,16 @@ export class EducacionComponent implements OnInit {
   }
 
   public onEditEducacion(educacion: Educacion): void {
-    console.log(educacion);
+    this.editEducacion = educacion;
+    this.educacionService.updateEducacion(educacion).subscribe({
+      next: (response: Educacion) => {
+        console.log(response);
+        this.getEducacion();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
   }
   public ondeleteEducacion(idEdu: number): void {
     this.educacionService.deleteEducacion(idEdu).subscribe({
@@ -61,5 +71,10 @@ export class EducacionComponent implements OnInit {
   }
   public imprimir(valor: any): void {
     console.log(valor);
+  }
+
+  public agregarAEdit(educacion:Educacion):void{
+    console.log(educacion);
+    this.editEducacion = educacion;
   }
 }

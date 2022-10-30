@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { LenguajesComponent } from './components/lenguajes/lenguajes.component';
-import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,7 +18,6 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     HeroComponent,
     LenguajesComponent,
-    AcercaDeComponent,
     ProyectosComponent,
     EducacionComponent,
     FooterComponent,

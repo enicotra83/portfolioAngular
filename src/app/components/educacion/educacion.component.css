@@ -32,9 +32,13 @@
 }
 
 .accordion:hover {
-  background: var(--oscuro);
+  background: var(--blanco);
 }
 .bi-trash3-fill,
 .bi-pen {
   margin: 0px 5px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: inherit;
 }
