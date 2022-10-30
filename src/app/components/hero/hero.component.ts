@@ -1,20 +1,43 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Usuario } from 'src/app/models/usuario';
+import { HeroService } from 'src/app/servicios/hero.service';
+//import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
-  miPortfolio:any;
-  constructor(private datosPortfolio: PortfolioService ) { }
+  public usuario: Usuario | undefined;
+  public editUsuario: Usuario | undefined;
+
+  constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(datos =>{
-      console.log(datos)
-      this.miPortfolio = datos; 
-    })
+    this.getUser();
   }
 
+  public getUser(): void {
+    this.heroService.getUser().subscribe({
+      next: (response: Usuario) => {
+        this.usuario = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+
+  //con BD JSON interno
+  //miPortfolio: any;
+  //constructor(private datosPortfolio: PortfolioService) {}
+
+  //ngOnInit(): void {
+  //  this.datosPortfolio.obtenerDatos().subscribe((datos) => {
+  //    console.log(datos);
+  //    this.miPortfolio = datos;
+  //  });
+  //}
 }

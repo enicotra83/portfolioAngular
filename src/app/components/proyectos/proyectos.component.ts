@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Proyecto } from 'src/app/models/proyectos';
+import { ProyectoService } from 'src/app/servicios/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,13 +9,22 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-  proyectos: any;
-  constructor(private datosPortfolio: PortfolioService) {}
+  public proyectos: Proyecto[] = [];
+
+  constructor(private proyectoService: ProyectoService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((datos) => {
-      console.log(datos);
-      this.proyectos = datos.projects;
+    this.getProyecto();
+  }
+
+  public getProyecto(): void {
+    this.proyectoService.getProyectos().subscribe({
+      next: (Response: Proyecto[]) => {
+        this.proyectos = Response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
     });
   }
 }

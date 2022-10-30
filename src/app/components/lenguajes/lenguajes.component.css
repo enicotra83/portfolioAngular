@@ -1,0 +1,34 @@
+.lenguajes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0px;
+}
+.lenguajes img {
+  height: 70px;
+  padding: 0px 15px;
+}
+.javascript:hover {
+    filter: invert(76%) sepia(116%) saturate(357%) hue-rotate(367deg)
+    brightness(185%) contrast(80%);
+}
+.angular {
+  height: 80px !important;
+}
+.angular:hover {
+  filter: invert(14%) sepia(88%) saturate(7212%) hue-rotate(341deg)
+    brightness(82%) contrast(107%);
+}
+.css:hover {
+  filter: invert(72%) sepia(60%) saturate(590%) hue-rotate(159deg)
+    brightness(100%) contrast(93%);
+}
+.html:hover {
+  filter: invert(45%) sepia(21%) saturate(4949%) hue-rotate(348deg)
+    brightness(103%) contrast(88%);
+}
+
+.react:hover {
+  filter: invert(47%) sepia(20%) saturate(6909%) hue-rotate(164deg)
+    brightness(98%) contrast(101%);
+}

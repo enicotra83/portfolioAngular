@@ -1,0 +1,36 @@
+.proyectos {
+  padding: 15px 0px 10px 20px;
+}
+.proyImg {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+}
+.card {
+  padding: 0px;
+  margin: 7px;
+}
+.divSubclases {
+  width: 100%;
+  padding-top: 25px;
+}
+.bi-trash3-fill,
+.bi-pen {
+  margin: 0px 5px;
+}
+.proySubclases {
+  color: var(--oscuro);
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+.btnProy {
+  margin: 0px 5px;
+  padding: 6px 20px;
+  background: var(--botones);
+  border: none;
+}
+.imgBtnProyecto {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
+}

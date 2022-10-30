@@ -1,0 +1,14 @@
+.textoHero {
+  padding: 15px 0px 0px 20px;
+}
+.edicionHero {
+  display: flex;
+  justify-content: flex-start;
+}
+.imgHero {
+  width: 100%;
+  height: 60vh;
+  background: url(../../../assets/DSC_0004.jpg) center center;
+  background-size: cover;
+  *transform: scaleX(-1);
+}

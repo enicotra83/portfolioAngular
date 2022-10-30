@@ -1,99 +1,63 @@
 :root {
-    --iconos: #cfd3d6;
-    --oscuro: #9e9e9e;
-    --botones: #1a237e;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .maximo {
-    max-width: 1500px;
-    box-sizing: border-box;
-  }
-  .navbar-collapse {
-    justify-content: flex-end;
-  }
-  section {
-    border: solid 0.5px var(--iconos);
-    border-radius: 15px;
-    margin-bottom: 3px;
-    width: 100%;
-  }
-  .imgHero {
-    width: 100%;
-    height: 60vh;
-    background: url(./assets/DSC_0004.jpg) center center;
-    background-size: cover;
-    *transform: scaleX(-1);
-  }
-  .textoHero {
-    padding: 15px 0px 0px 20px;
-  }
-  .acercaDe {
-    height: fit-content;
-    padding: 20px 0px 20px 20px;
-  }
-  .acercaDe p {
-    margin-bottom: 2px;
-  }
-  .lenguajes {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px 0px;
-  }
-  .lenguajes img {
-    height: 60px;
-    padding: 0px 15px;
-  }
-  .imgChica {
-    height: 70px !important;
-  }
-  
-  .proyectos {
-    padding: 15px 0px 10px 20px;
-  }
-  .proyImg {
-    width: 40px;
-    height: 40px;
-    margin: 0px 10px;
-  }
-  .card {
-    padding: 0px;
-    margin: 7px;
-  }
-  .divSubclases {
-    width: 100%;
-  }
-  .subclases {
-    display: flex;
-    align-items: center;
-    padding-top: 25px;
-  }
-  .proySubclases {
-    color: var(--oscuro);
-    font-size: 30px;
-    margin-bottom: 0px;
-  }
-  .btnProy {
-    margin: 0px 5px;
-    padding: 6px 20px;
-    background: var(--botones);
-    border: none;
-  }
-  .imgBtnProyecto {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 3px;
-  }
-  
-  .educacion {
-    padding: 15px 0px 10px 20px;
-  }
-  .accordion:hover {
-    background: var(--oscuro);
-  }
-  
+  --blanco: #fafafa;
+  --iconos: #cfd3d6;
+  --oscuro: #9e9e9e;
+  --oscuroHover: #565e64;
+  --botones: #1a237e;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.maximo {
+  max-width: 1500px;
+  box-sizing: border-box;
+}
+
+section {
+  border: solid 0.5px var(--iconos);
+  border-radius: 15px;
+  margin-bottom: 3px;
+  width: 95vw;
+  box-sizing: border-box;
+  max-width: 1500px;
+}
+.pointer {
+  cursor: pointer;
+}
+.admin {
+  display: flex;
+  justify-content: flex-end;
+}
+.headerSeccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+.btnAgregar {
+  cursor: pointer;
+  font-size: 40px;
+  line-height: 30px;
+  border: none;
+  color: var(--botones);
+  margin: 0px;
+  border-radius: 50px;
+}
+.btnAgregar:hover {
+  background: var(--oscuro);
+  color: var(--iconos);
+}
+.bi-trash3-fill,
+.bi-pen {
+  cursor: pointer;
+  color: var(--botones);
+  margin: 0px 15px;
+}
+.bi-trash3-fill:hover,
+.bi-pen:hover {
+  color: var(--oscuro);
+}

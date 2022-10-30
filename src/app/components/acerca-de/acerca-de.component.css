@@ -1,0 +1,12 @@
+.divParrafo {
+  display: flex;
+  align-items: center;
+}
+
+.acercaDe {
+  height: fit-content;
+  padding: 20px 0px 20px 20px;
+}
+.acercaDe p {
+  margin-bottom: 2px;
+}

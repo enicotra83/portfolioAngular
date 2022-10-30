@@ -11,15 +11,24 @@
     "Te invito a visitar mis proyectos y me encuentro a tu disposición por cualquiera de los canales de comunicación."
   ],
   "lenguajes": [
-    "./assets/reactjs.png",
-    "./assets/angular.png",
-    "./assets/js.png",
-    "./assets/html.png",
-    "./assets/css3.png"
+    { "source": "./assets/reactjs.png", "name": "react", "vinculo": "#react" },
+    {
+      "source": "./assets/angular.png",
+      "name": "angular",
+      "vinculo": "#angular"
+    },
+    {
+      "source": "./assets/js.png",
+      "name": "javascript",
+      "vinculo": "#javascript"
+    },
+    { "source": "./assets/html.png", "name": "html", "vinculo": "#html" },
+    { "source": "./assets/css3.png", "name": "css", "vinculo": "#html" }
   ],
   "projects": [
     {
       "title": "React.js",
+      "name": "react",
       "icon": "./assets/reactjs.png",
       "proyectos": [
         {
@@ -54,6 +63,7 @@
     },
     {
       "title": "Vanilla Javascript",
+      "name": "javascript",
       "icon": "./assets/js.png",
       "proyectos": [
         {
@@ -87,39 +97,40 @@
       ]
     },
     {
-        "title": "HTML5 y CSS3",
-        "icon": "./assets/html.png",
-        "proyectos": [
-          {
-            "title": "proyecto1",
-            "projectImg": "imagen proyecto",
-            "description": "descripcion proyecto 1",
-            "projectWeb": "url deploy",
-            "projectGithub": "url github"
-          },
-          {
-            "title": "proyecto2",
-            "projectImg": "imagen proyecto",
-            "description": "descripcion proyecto 1",
-            "projectWeb": "url deploy",
-            "projectGithub": "url github"
-          },
-          {
-            "title": "proyecto1",
-            "projectImg": "imagen proyecto",
-            "description": "descripcion proyecto 1",
-            "projectWeb": "url deploy",
-            "projectGithub": "url github"
-          },
-          {
-            "title": "proyecto1",
-            "projectImg": "imagen proyecto",
-            "description": "descripcion proyecto 1",
-            "projectWeb": "url deploy",
-            "projectGithub": "url github"
-          }
-        ]
-      }  
+      "title": "HTML5 y CSS3",
+      "name": "html",
+      "icon": "./assets/html.png",
+      "proyectos": [
+        {
+          "title": "proyecto1",
+          "projectImg": "imagen proyecto",
+          "description": "descripcion proyecto 1",
+          "projectWeb": "url deploy",
+          "projectGithub": "url github"
+        },
+        {
+          "title": "proyecto2",
+          "projectImg": "imagen proyecto",
+          "description": "descripcion proyecto 1",
+          "projectWeb": "url deploy",
+          "projectGithub": "url github"
+        },
+        {
+          "title": "proyecto1",
+          "projectImg": "imagen proyecto",
+          "description": "descripcion proyecto 1",
+          "projectWeb": "url deploy",
+          "projectGithub": "url github"
+        },
+        {
+          "title": "proyecto1",
+          "projectImg": "imagen proyecto",
+          "description": "descripcion proyecto 1",
+          "projectWeb": "url deploy",
+          "projectGithub": "url github"
+        }
+      ]
+    }
   ],
   "education": [
     {

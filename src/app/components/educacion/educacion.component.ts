@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { NgForm } from '@angular/forms';
+import { Educacion } from 'src/app/models/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -7,13 +10,56 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./educacion.component.css'],
 })
 export class EducacionComponent implements OnInit {
-  educacion: any;
-  constructor(private datosPortfolio: PortfolioService) {}
+  public educaciones: Educacion[] = [];
+  public educations2 = this.educacionService.getEducacion();
+  public editEducacion: Educacion | undefined;
+  public deleteEducacion: Educacion | undefined;
+
+  constructor(private educacionService: EducacionService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((datos) => {
-      console.log(datos);
-      this.educacion = datos.education;
+    this.getEducacion();
+  }
+
+  public getEducacion(): void {
+    this.educacionService.getEducacion().subscribe({
+      next: (Response: Educacion[]) => {
+        this.educaciones = Response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
     });
+  }
+
+  public onAddEducacion(educacion: Educacion) {
+    this.editEducacion = educacion;
+    this.educacionService.updateEducacion(educacion).subscribe({
+      next: (response: Educacion) => {
+        console.log(response);
+        this.getEducacion();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+
+  public onEditEducacion(educacion: Educacion): void {
+    console.log(educacion);
+  }
+  public ondeleteEducacion(idEdu: number): void {
+    this.educacionService.deleteEducacion(idEdu).subscribe({
+      next: (response: void) => {
+        console.log(response);
+        this.getEducacion();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public imprimir(valor: any): void {
+    console.log(valor);
   }
 }
