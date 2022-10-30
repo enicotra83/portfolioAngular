@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Lenguaje } from 'src/app/models/lenguaje';
+import { LenguajesService } from 'src/app/servicios/lenguajes.service'
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-lenguajes',
@@ -7,13 +9,22 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./lenguajes.component.css'],
 })
 export class LenguajesComponent implements OnInit {
-  lenguajes: any;
-  constructor(private datosPortfolio: PortfolioService) {}
+  public lenguajes: Lenguaje[] = [];
+
+  constructor(private lenguajesService: LenguajesService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((datos) => {
-      console.log(datos);
-      this.lenguajes = datos.lenguajes;
+    this.getLenguaje();
+  }
+
+  public getLenguaje(): void {
+    this.lenguajesService.getLenguaje().subscribe({
+      next: (Response: Lenguaje[]) => {
+        this.lenguajes = Response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
     });
   }
 }

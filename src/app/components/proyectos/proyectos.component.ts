@@ -10,6 +10,9 @@ import { ProyectoService } from 'src/app/servicios/proyectos.service';
 })
 export class ProyectosComponent implements OnInit {
   public proyectos: Proyecto[] = [];
+  public editProyecto: Proyecto | undefined;
+  public agregadoProyecto: Proyecto | undefined;
+  public deleteProyecto: Proyecto | undefined;
 
   constructor(private proyectoService: ProyectoService) {}
 
@@ -26,5 +29,49 @@ export class ProyectosComponent implements OnInit {
         alert(error.message);
       },
     });
+  }
+
+  public onAddProyecto(proyecto: Proyecto) {
+    this.agregadoProyecto = proyecto;
+    this.proyectoService.addProyectos(proyecto).subscribe({
+      next: (response: Proyecto) => {
+        console.log(response);
+        this.getProyecto();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+
+  public agregarAEdit(proyecto: Proyecto): void {
+    console.log(proyecto);
+    this.editProyecto = proyecto;
+  }
+  public onEditProyecto(proyecto: Proyecto): void {
+    this.editProyecto = proyecto;
+    this.proyectoService.updateProyectos(proyecto).subscribe({
+      next: (response: Proyecto) => {
+        console.log(response);
+        this.getProyecto();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public ondeleteProyecto(idProy: number): void {
+    this.proyectoService.deleteProyectos(idProy).subscribe({
+      next: (response: void) => {
+        console.log(response);
+        this.getProyecto();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public imprimir(valor: any): void {
+    console.log(valor);
   }
 }

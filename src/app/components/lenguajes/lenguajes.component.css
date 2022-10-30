@@ -9,7 +9,7 @@
   padding: 0px 15px;
 }
 .javascript:hover {
-    filter: invert(76%) sepia(116%) saturate(357%) hue-rotate(367deg)
+  filter: invert(76%) sepia(116%) saturate(357%) hue-rotate(367deg)
     brightness(185%) contrast(80%);
 }
 .angular {
