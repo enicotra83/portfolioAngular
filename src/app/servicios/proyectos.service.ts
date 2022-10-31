@@ -12,25 +12,25 @@ export class ProyectoService {
   constructor(private http: HttpClient) {}
 
   public getProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.apiServerUrl}/proyectos/todos`);
+    return this.http.get<Proyecto[]>(`${this.apiServerUrl}/api/proyectos`);
   }
 
   public addProyectos(proyecto: Proyecto): Observable<Proyecto> {
     return this.http.post<Proyecto>(
-      `${this.apiServerUrl}/proyectos/agregar`,
+      `${this.apiServerUrl}/api/proyectos`,
       proyecto
     );
   }
 
   public updateProyectos(proyecto: Proyecto): Observable<Proyecto> {
     return this.http.put<Proyecto>(
-      `${this.apiServerUrl}/proyectos/actualizar`,
+      `${this.apiServerUrl}/api/proyectos`,
       proyecto
     );
   }
   public deleteProyectos(idProy: number): Observable<void> {
     return this.http.delete<void>(
-      `${this.apiServerUrl}/proyectos/borrar/${idProy}`
+      `${this.apiServerUrl}/api/proyectos/${idProy}`
     );
   }
 }

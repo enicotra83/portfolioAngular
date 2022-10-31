@@ -13,10 +13,10 @@ export class LenguajesService {
   constructor(private http: HttpClient) {}
 
   public getLenguaje(): Observable<Lenguaje[]> {
-    return this.http.get<Lenguaje[]>(`${this.apiServerUrl}/lenguaje`);
+    return this.http.get<Lenguaje[]>(`${this.apiServerUrl}/api/lenguaje`);
   }
   public updateLenguaje(lenguaje: Lenguaje): Observable<Lenguaje> {
-    return this.http.put<Lenguaje>(`${this.apiServerUrl}/lenguaje`, lenguaje);
+    return this.http.put<Lenguaje>(`${this.apiServerUrl}/api/lenguaje`, lenguaje);
   }
 
 }

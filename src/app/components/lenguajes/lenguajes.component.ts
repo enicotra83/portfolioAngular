@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lenguaje } from 'src/app/models/lenguaje';
-import { LenguajesService } from 'src/app/servicios/lenguajes.service'
+import { LenguajesService } from 'src/app/servicios/lenguajes.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

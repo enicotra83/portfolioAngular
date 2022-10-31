@@ -134,34 +134,34 @@
   ],
   "education": [
     {
-      "title": "Yo Programo - Argentina Programa (en curso)",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "title": "Desarrollo Personal - Oracle One Next Education",
+      "description": "4 cursos de capacitación con una carga de trabajo estimada de 34 horas",
+      "certificadoImg": "../../../assets/despersonal.jpg"
     },
     {
-      "title": "Programa Basico Multidisciplinario de Formación en Datos e IA - UBA-IALAB (en curso)",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "title": "Principiante en programacion - Oracle One Next Education",
+      "description": "8 cursos de capacitación con una carga de trabajo estimada de 75 horas",
+      "certificadoImg": "../../../assets/principiante.jpg"
     },
     {
       "title": "SummerHack 2022 - Escuela DevRock",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Formacion intensiva en HTML, CSS, Javascript, Reactjs con componentes funcionales y Firebase como BAAS",
+      "certificadoImg": "../../../assets/summerhack.jpg"
     },
     {
       "title": "Curso de Firebase - Escuela DevRock",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Crear una web con autenticacion a traves de Google, incorporando reglas de seguridad. Proyectos: chat real time mas ecommerce usando Firebase como BAAS",
+      "certificadoImg": "../../../assets/firebase.jpg"
     },
     {
       "title": "Curso de React.js - Escuela DevRock",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Curso de React 16 en el que se aprenden componentes funcionales y nuevos Hooks (useState, useEffect, useReducer y useContext) mediante la creacion de un ecommerce",
+      "certificadoImg": "../../../assets/react.jpg"
     },
     {
       "title": "Javascript - Escuela DevRock",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Curso que inicia en variables y culmina con JS asincronico, pasando por conceptos claves como Metodos, Herencia, Arrays, Bucles, Scope y POO",
+      "certificadoImg": "me olvide.jpg"
     },
     {
       "title": "HTML for Babies - Escuela DevRock",
@@ -170,18 +170,18 @@
     },
     {
       "title": "Se programar - Argentina Programa",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Curso de introduccion a la logica de programacion",
+      "certificadoImg": "../../../assets/apseprogramar.jpg"
     },
     {
-      "title": "Cindoors - Escuela DevRock",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "title": "Diplomatura en ingles",
+      "description": "programa de formacion de RRHH para la insercion laboral y/o autoempleo - 120hs",
+      "certificadoImg": "../../../assets/ingles.jpg"
     },
     {
       "title": "Diseño Web con HTML 5 y CSS 3 - Fundacion Telefonica",
-      "description": "descripcion del curso con tecnologias aplicadas y periodo de estudio. Puedo copiar id y web para ver el certificado igual",
-      "certificadoImg": "urlCertificado"
+      "description": "Curso de 30 horas para aprender a diseñar páginas web utilizando el lenguaje HTML, HTML5 y las hojas de estilo CSS.",
+      "certificadoImg": "../../../assets/disenioweb.jpg"
     },
     {
       "title": "Introducción a la Programación - Fundación Telefónica",

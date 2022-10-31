@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/models/usuario';
+import { Info } from 'src/app/models/info';
 import { NgForm } from '@angular/forms';
 import { HeroService } from 'src/app/servicios/hero.service';
 //import { PortfolioService } from 'src/app/servicios/portfolio.service';
@@ -11,19 +11,19 @@ import { HeroService } from 'src/app/servicios/hero.service';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
-  public usuario: Usuario | undefined;
-  public editUsuario: Usuario | undefined;
+  public info: Info | undefined;
+  public editInfo: Info | undefined;
 
   constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
-    this.getUser();
+    this.getInfo();
   }
 
-  public getUser(): void {
-    this.heroService.getUser().subscribe({
-      next: (response: Usuario) => {
-        this.usuario = response;
+  public getInfo(): void {
+    this.heroService.getInfo().subscribe({
+      next: (response: Info) => {
+        this.info = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -31,16 +31,16 @@ export class HeroComponent implements OnInit {
     });
   }
 
-  public agregarAEdit(usuario: Usuario): void {
-    console.log(usuario);
-    this.editUsuario = usuario;
+  public agregarAEdit(info: Info): void {
+    console.log(info);
+    this.editInfo = info;
   }
 
-  public onEditUsuario(usuario: Usuario): void {
-    this.heroService.updateUser(usuario).subscribe({
-      next: (response: Usuario) => {
+  public onEditInfo(info: Info): void {
+    this.heroService.updateInfo(info).subscribe({
+      next: (response: Info) => {
         console.log(response);
-        this.getUser();
+        this.getInfo();
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

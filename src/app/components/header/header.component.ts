@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Usuario } from 'src/app/models/usuario';
+import { Info } from 'src/app/models/info';
 import { HeaderService } from 'src/app/servicios/header.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-header',
@@ -9,19 +10,33 @@ import { HeaderService } from 'src/app/servicios/header.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  public usuario: Usuario | undefined;
-  public editUsuario: Usuario | undefined;
-  
-  constructor(private headerService: HeaderService) {}
+  public info: Info | undefined;
+  public editInfo: Info | undefined;
+  isLogged = false;
+
+  constructor(
+    private headerService: HeaderService,
+    private tokenService: TokenService
+  ) {}
 
   ngOnInit(): void {
-    this.getUser();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    this.getInfo();
   }
 
-  public getUser(): void {
-    this.headerService.getUser().subscribe({
-      next: (response: Usuario) => {
-        this.usuario = response;
+  onLogout(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
+
+  public getInfo(): void {
+    this.headerService.getInfo().subscribe({
+      next: (response: Info) => {
+        this.info = response;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
